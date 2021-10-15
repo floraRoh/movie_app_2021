@@ -13,15 +13,24 @@ import PropTypes from "prop-types";
  */
 class App extends React.Component {
   state = {
-    // object
-    // component의 data를 넣을 공간이 있고 이 데이터는 변한다.
+    /**
+     * state == object
+     * component의 data를 넣을 공간이 있고 이 데이터는 변한다.
+     *  
+     * setState를 사용하지 않으면 새 state와 함께 render function이 호출되지 않음
+     * 
+     * 매 순간 set state를 호출할 때 마다 react는 새로운 state와 함께 render function을 호출한다. 
+     * */ 
     count: 0,
   };
   add = () => {
-    console.log("add");
+    this.setState({ count: current.count + 1 });
+    /**
+     * this.state.count는 외부에 의존적이어서 권장하지 않음. 대신 current를 사용하는 게 좋다
+     */
   };
   miuns = () => {
-    console.log("minus");
+    this.setState({ count: this.state.count - 1 });
   };
   render() {
     return (
