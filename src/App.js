@@ -1,38 +1,63 @@
 import React from "react";
-import PropTypes from "prop-types";
 
-/**
- * class component는 return이 없다 (function이 아니니까)
- * class component는 render method를 가지고 있고 나의 app component안에 있다. 왜냐면 내가 react component에서 확장했기 때문
- *
- *
- * function component는 function이고 뭔가를 return하고 screen에 표시된다.
- * class component는 class이고 react component로 부터 확장되고 screen에 표시된다.
- *
- * react는 자동적으로 class component의 render method를 실행한다.
- */
 class App extends React.Component {
   state = {
-    /**
-     * state == object
-     * component의 data를 넣을 공간이 있고 이 데이터는 변한다.
-     *  
-     * setState를 사용하지 않으면 새 state와 함께 render function이 호출되지 않음
-     * 
-     * 매 순간 set state를 호출할 때 마다 react는 새로운 state와 함께 render function을 호출한다. 
-     * */ 
     count: 0,
   };
   add = () => {
-    this.setState({ count: current.count + 1 });
-    /**
-     * this.state.count는 외부에 의존적이어서 권장하지 않음. 대신 current를 사용하는 게 좋다
-     */
+    this.setState(current => ({ count: current.count + 1 }));
   };
   miuns = () => {
-    this.setState({ count: this.state.count - 1 });
-  };
+    this.setState(current => ({ count: current.count - 1 }));
+  }; // current 부분 잘 볼 것 !! 
+  
+  constructor(props) {
+    super(props);
+    console.log('hello');
+  }
+  componentDidMount() {
+    console.log('componentDidMount');
+  }
+  componentDidUpdate(){
+    console.log('componentDidUpdate');
+  }
+  componentWillUnmount() {
+    console.log('componentWillUnmount'); 
+    // 이건 preserve log 체크해도 console.log 확인 안됨
+  }
   render() {
+    /**
+     * react component에서 유일한 function은 render function이다. react class component는 단순히 render말고 더 많은걸 가지고 있다.
+     *  이들은 life cycle method를 가지는데, 이는 기본적으로 react가 compnent를 생성하는 & 없애는 방법이다. component가 생성 될 때, render 전에 호출되는 몇 가지 function이 있다.
+     * 
+     * 1. Mounting 
+     * = component be born 
+     * 
+     * [호출순서]
+     * 1-1.먼저 호출되는 게 constructor (constructor는 react에서 오지않았다. constructor는 javascript에서 class를 만들 때 호출되는거야 )
+     * 1-2. static getDerivedStateFromProps ()
+     * 1-3. render()
+     * 1-4. componentDidMount()
+     * 
+     * 2. Updating
+     * 
+     * [호출순서]
+     * 2-1. static getDerivedStateFromProps()
+     * 2-2. shouldComponentUpdate() 
+     * == 기본적으로 업데이트를 할지 말지 결정하는 거
+     * 2-3. render()
+     * 2-4. getSnapshotBeforeUpdate()
+     * 2-5. componentDidUpdate()
+     * 
+     * componentWillUpdate랑 componentWillReceiveProps는 전에 사용했지만 잘 사용하지 않아 멀리 떠나감. 이제는 없다.
+     * 
+     * setState를 호출하면 component를 호출하고 render를 호출한 다음 업데이트가 완료되었다고 말하면 componentDidUpdate가 실행된다.
+     * 
+     * 3. Unmounting 
+     * = component die (페이지 바꿀 때 component는 죽지 || state를 사용해서 compoent를 교체할 때 죽기도 하고)
+     * 3-1. componentWillUnmount()
+     * = component가 죽을 때 !
+     */
     return (
       <>
         <h1>Im a class component : {this.state.count}</h1>
