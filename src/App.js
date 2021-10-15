@@ -5,7 +5,7 @@ function Food({ name, picture }) {
   return (
     <>
       <h3>I love {name}</h3>
-      <img src={picture} />
+      <img src={picture} alt={name} />
     </>
   );
 }
@@ -42,12 +42,19 @@ const foodILike = [
   },
 ];
 
+function renderFood(dish) {
+  console.log(dish)
+  return(
+    <>
+      <Food key={dish.id}  name={dish.name} picture={dish.image}/>
+    </>
+  )
+}
+
 function App() {
   return (
     <>
-      {foodILike.map((dish) => (
-        <Food name={dish.name} picture={dish.image} />
-      ))}
+      {foodILike.map(renderFood)}
     </>
   );
 }
