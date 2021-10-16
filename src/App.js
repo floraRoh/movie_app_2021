@@ -1,27 +1,24 @@
 import React from "react";
 import { HashRouter, Route } from "react-router-dom";
+// import { BrowserRouter, Route } from "react-router-dom";
 import About from "./routes/About";
 import Home from "./routes/Home";
-
+import Navigation from "./components/Navigation";
+/**
+ * BrowserRouter 과 HashRouter 차이
+ * - HashRouter는 주소창에 /#/ 나옴
+ * - BrowserRouter는 github pages를 사용할 때 어려운게 있다고 한다. 찾아보기 
+ */
 function App() {
   return (
     <HashRouter>
       {/* 
-      <Route path="/" component={Home}></Route>
-      <Route path="/about"  component={About}></Route> 
-      이렇게 되면 about에도 / 가 있으니까 about 페이지에서는 2개 다 렌더링 된다. 
-      <Route path="/" exact={true} component={Home}>asdgs</Route>
-      exact={true} 를 넣어줘서 path가 정확히 '/' <- 이거 하나일 때만 home을 렌더링 해주게 할 수 있다.
+        1. router 밖에서는 link를 쓸 수 없다
+        ==> HashRouter tag 밖에 Navigation tag를 놓으면 작동 X
       */}
-      <Route path="/home">
-        <h1>Home</h1>
-      </Route>
-      <Route path="/home/introduction">
-        <h1>Introduction</h1>
-      </Route>
-      <Route path="/about">
-        <h1>About</h1>
-      </Route>
+      <Navigation />
+        <Route path="/" exact={true} component={Home}></Route>
+        <Route path="/about" component={About}></Route>
     </HashRouter>
   );
 }
