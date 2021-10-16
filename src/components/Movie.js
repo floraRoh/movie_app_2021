@@ -3,10 +3,7 @@ import PropTypes from "prop-types";
 import "./Movie.scss";
 
 /**
- * movies component는 state를 필요로 하지 않는다. 그래서 만약에 component가 state를 필요로 하지 않을 경우에는 이게 class component가 될 필요가 없다.
- *  
- * ++++ 
- * 이제 state를 갖기 위해 class component를 가질 필요가 없다 => 왜냐면, react hook이 해주니까
+ * react-router-dom은 네비게이션을 만들어주는 npm 패키지
  */
 function Movie({ id, year, title, summary, poster, genres, url }) {
   return (
