@@ -4,6 +4,7 @@ import { HashRouter, Route } from "react-router-dom";
 import About from "./routes/About";
 import Home from "./routes/Home";
 import Navigation from "./components/Navigation";
+import MovieDetail from "./routes/MovieDetail";
 /**
  * BrowserRouter 과 HashRouter 차이
  * - HashRouter는 주소창에 /#/ 나옴
@@ -19,6 +20,7 @@ function App() {
       <Navigation />
         <Route path="/" exact={true} component={Home}></Route>
         <Route path="/about" component={About}></Route>
+        <Route path="/movie-detail" component={MovieDetail}></Route>
     </HashRouter>
   );
 }
