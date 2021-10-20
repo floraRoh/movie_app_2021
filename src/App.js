@@ -9,7 +9,7 @@ import TopBtn from "./components/TopBtn";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Navigation />
       <Route path="/" exact={true} component={Home}></Route>
       <Route path="/movie/:id" component={MovieDetail}></Route>
