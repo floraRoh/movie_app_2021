@@ -1,33 +1,29 @@
-
-.Navigation{
-  background:#000000;
-  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+.Navigation {
+  background: #000000;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   text-align: center;
   width: 100%;
-  height: 80px;
+  height: auto;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: flex-end;
-  padding-right:4rem;
-  position:sticky;
-  top:0;
-  left:0;
-  z-index: 99;
+  position: sticky;
+  top: 0;
+  left: 0;
+  line-height: 60px;
+  padding: 0 2rem;
   font-size: 1.5rem;
-  a{
+  z-index: 99;
+  .backBtn, a {
     text-decoration: none;
-    color:#ffffff;
+    color: #ffffff;
     font-weight: bold;
-    width: 8rem;
-    text-align: right;
-    &:hover{
-      color:#adadad;
+    &:hover {
+      color: #adadad;
+    }
+    svg {
+      width: 1.5rem;
+      height: 100%;
     }
   }
 }
-// @supports(position:sticky) or (position: -webkit-sticky) {
-//   .Navigation{
-//     position: sticky;
-//     top:50px;
-//   }
-// }

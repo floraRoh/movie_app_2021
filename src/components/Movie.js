@@ -3,15 +3,12 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import "./Movie.scss";
 
-/**
- * react-router-dom은 네비게이션을 만들어주는 npm 패키지
- */
 function Movie({ id, year, title, summary, poster, genres, url }) {
   return (
     <Link
       to={{
-        pathname: "/Movie-detail",
-        state: { title, year, summary, poster, genres, url },
+        pathname: `/Movie/${id}`,
+        state: { title, year, summary, poster, genres },
       }}
     >
       <div className="movies__movies">
@@ -27,7 +24,6 @@ function Movie({ id, year, title, summary, poster, genres, url }) {
                 {genres}
               </li>
             ))}
-            {/* map에 있는 각각의 item은 key가 필요하다 */}
           </ul>
           <p className="movies__summary">{summary.slice(0, 140) + "..."}</p>
         </div>
