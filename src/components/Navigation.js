@@ -22,7 +22,7 @@ const history = useHistory();
             />
           </svg>
         </div>
-        <Link to="/">
+        <Link to="/movie_app_2021">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"

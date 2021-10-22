@@ -11,7 +11,7 @@ function App() {
   return (
     <BrowserRouter>
       <Navigation />
-      <Route path="/" component={Home}></Route>
+      <Route path="/movie_app_2021" exact={true} component={Home}></Route>
       <Route path="/movie/:id" component={MovieDetail}></Route>
       <Footer />
       <TopBtn />
