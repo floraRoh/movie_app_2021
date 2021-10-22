@@ -13,6 +13,10 @@ body {
   font-family: sans-serif;
   font-size: 16px;
 }
+.flex-align-center {
+  display: flex !important;
+  align-items: center !important;
+}
 .movies {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -51,8 +55,7 @@ body {
         font-size: 0.85rem;
       }
       .genres {
-        display: flex;
-        align-items: center;
+        @extend .flex-align-center;
         flex-wrap: wrap;
         .genres__genre {
           margin: 5px 10px 5px 0;
@@ -66,11 +69,18 @@ body {
   }
 }
 
+.movies.detail {
+  @extend .movies;
+  @extend .flex-align-center;
+  min-height: calc(100vh - 110px);
+}
+
 @media screen and (max-width: 1024px) {
-  .movies {
+  .movies,
+  .movies.detail {
     display: block;
-    .movies__movies{
-      margin-bottom:4rem;
+    .movies__movies {
+      margin-bottom: 4rem;
       .movies__poster {
         width: 50%;
         max-width: 15rem;
@@ -83,21 +93,23 @@ body {
   body {
     font-size: 14px;
   }
-  .movies {
+  .movies,
+  .movies.detail {
     display: block;
     padding: 4rem 2rem 0 2rem;
     .movies__movies {
       .movies__poster {
         width: 100%;
       }
-      .movies__data{
-        padding-top:0;
+      .movies__data {
+        padding-top: 0;
       }
     }
   }
 }
 @media screen and (max-width: 512px) {
-  .movies {
+  .movies,
+  .movies.detail {
     .movies__movies {
       display: block;
       .movies__poster {

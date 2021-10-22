@@ -16,7 +16,7 @@ class MovieDetail extends React.Component {
     } = this.props;
     if (true) {
       return (
-        <div className="movies">
+        <div className="movies detail">
           <div className="movies__movies">
             <div className="movies__poster">
               <img src={poster} alt={title} title={title} />
