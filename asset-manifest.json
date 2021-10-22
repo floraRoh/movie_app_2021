@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "https://floraroh.github.io/movie_app_2021/static/css/main.6313c281.chunk.css",
-    "main.js": "https://floraroh.github.io/movie_app_2021/static/js/main.0dbe5d18.chunk.js",
-    "main.js.map": "https://floraroh.github.io/movie_app_2021/static/js/main.0dbe5d18.chunk.js.map",
+    "main.js": "https://floraroh.github.io/movie_app_2021/static/js/main.ee15dfc1.chunk.js",
+    "main.js.map": "https://floraroh.github.io/movie_app_2021/static/js/main.ee15dfc1.chunk.js.map",
     "runtime-main.js": "https://floraroh.github.io/movie_app_2021/static/js/runtime-main.f108be20.js",
     "runtime-main.js.map": "https://floraroh.github.io/movie_app_2021/static/js/runtime-main.f108be20.js.map",
-    "static/js/2.207fcdd0.chunk.js": "https://floraroh.github.io/movie_app_2021/static/js/2.207fcdd0.chunk.js",
-    "static/js/2.207fcdd0.chunk.js.map": "https://floraroh.github.io/movie_app_2021/static/js/2.207fcdd0.chunk.js.map",
+    "static/js/2.9c76b24f.chunk.js": "https://floraroh.github.io/movie_app_2021/static/js/2.9c76b24f.chunk.js",
+    "static/js/2.9c76b24f.chunk.js.map": "https://floraroh.github.io/movie_app_2021/static/js/2.9c76b24f.chunk.js.map",
     "index.html": "https://floraroh.github.io/movie_app_2021/index.html",
     "static/css/main.6313c281.chunk.css.map": "https://floraroh.github.io/movie_app_2021/static/css/main.6313c281.chunk.css.map",
-    "static/js/2.207fcdd0.chunk.js.LICENSE.txt": "https://floraroh.github.io/movie_app_2021/static/js/2.207fcdd0.chunk.js.LICENSE.txt"
+    "static/js/2.9c76b24f.chunk.js.LICENSE.txt": "https://floraroh.github.io/movie_app_2021/static/js/2.9c76b24f.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.f108be20.js",
-    "static/js/2.207fcdd0.chunk.js",
+    "static/js/2.9c76b24f.chunk.js",
     "static/css/main.6313c281.chunk.css",
-    "static/js/main.0dbe5d18.chunk.js"
+    "static/js/main.ee15dfc1.chunk.js"
   ]
 }
