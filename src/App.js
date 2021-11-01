@@ -11,8 +11,8 @@ function App() {
   return (
     <BrowserRouter>
       <Navigation />
-      <Route path="/movie_app_2021" exact={true} component={Home}></Route>
-      <Route path="/movie/:id" component={MovieDetail}></Route>
+      <Route path="/movie_app_2021/home" exact={true} component={Home}></Route>
+      <Route path="/movie_app_2021/movie/:id" component={MovieDetail}></Route>
       <Footer />
       <TopBtn />
     </BrowserRouter>
